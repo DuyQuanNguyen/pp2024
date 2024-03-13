@@ -5,9 +5,7 @@ from domains.student_management_system import StudentManagementSystem
 from input import get_int_input, get_str_input, get_float_input
 from output import display_message, display_student_info, display_course_info
 
-# Check if students.dat exists
 if os.path.exists("students.dat"):
-    # Decompress and load data from it
     compressed_file_path = "students.dat"
     decompressed_file_path = "students.txt"
 
@@ -17,10 +15,6 @@ if os.path.exists("students.dat"):
     with open(decompressed_file_path, "w") as decompressed_file:
         decompressed_file.write(data)
 
-    # Load data into the StudentManagementSystem object
-    # (you need to implement a method for loading data in the StudentManagementSystem class)
-    # For example, you can read data from the decompressed file and populate the system object.
-    # Ensure to handle the file reading logic appropriately based on your data structure.
 else:
     system = StudentManagementSystem()
     system.student_info()
@@ -51,8 +45,6 @@ while True:
     elif choice == 6:
         print("Thanks for using this student management system")
 
-        # Before closing your program
-        # Select a compression method
         compression_method = input("Select a compression method (gzip, zip, etc.): ")
 
         if compression_method == "gzip":
